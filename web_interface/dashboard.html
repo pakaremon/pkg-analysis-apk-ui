@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Nicer Table</title>
+        <link href="./styles.css" rel="stylesheet" type="text/css" />
+        <link href="./vendor.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body class="night">
+            <!-- class="night" -->
+    <!-- class="cyborg" -->
+        <nav class="app-nav" id="primary-nav">
+
+            <li class="active"><a title="Dashboard" href="dashboard.html"><i class="fa fa-tachometer"></i> Dashboard</a></li>
+            <li><a href="#" title="Recent"><i class="fa fa-th-list"></i> Recent</a></li>
+            <li><a href="#" title="Pending"><i class="fa fa-cogs"></i> Pending</a></li>
+            <li><a href="#" title="Search"><i class="fa fa-search"></i> Search</a></li>
+            </ul>
+        
+            <ul class="app-nav__nav--right">
+                <li>
+                    <a href="./submit.html" class="button outline">
+                        <span data-responsive="nav-expanded">Submit</span>
+                        <span data-responsive="nav-collapsed"><i class="fa fa-upload"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="button outline">
+                        <span data-responsive="nav-expanded">Import</span>
+                        <span data-responsive="nav-collapsed"><i class="fa fa-download"></i></span>
+                    </a>
+                </li>
+                <li class="app-nav__dropdown--parent">
+                    <a href="#" id="select-theme">
+                        <i class="fa fa-paint-brush"></i>
+                    </a>
+                    <div class="app-nav__dropdown">
+                        <h5>Select theme</h5>
+                        <li><a class="active" href="theme:default">Default</a></li>
+                        <li><a href="theme:cyborg">Cyborg</a></li>
+                        <li><a href="theme:night">Night</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        
+        </nav>
+
+        
+
+
+    <div class="app">
+        <div id="cuckoo-dashboard" class="hidden"> </div>
+        <div class="flex-grid__horizontal--grow dashboard">
+            <div class="flex-grid__column dashboard__left">
+                <h2 class="dashboard__col-title">Insights</h2>
+                <div class="dashboard-module" data-dashboard-module="installation"> 
+                    <header class="dashboard-module__header">
+                        <h4>package-analysis-apk Installation</h4>
+                    </header>
+                    <section class="dashboard-module__body">
+                        <table class="simple">
+                            <tbody>
+                                <tr>
+                                    <td>Version</td>
+                                    <td>1.0.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+                <div class="dashboard-module">
+                    <header class="dashboard-module__header">
+                        <h4>Usage statistics</h4>
+                    </header>
+                    <section class="dashboard-module__body">
+                        <table class="simple">
+                            <tbody data-populate="statistics">
+                                <tr>
+                                    <td>Reported</td>
+                                    <td>5868258</td>
+                                </tr>
+                                <tr>
+                                    <td>Completed</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>5909340</td>
+                                </tr>
+                                <tr>
+                                    <td>Running</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Pending</td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+
+
+            </div>
+
+            <div class="flex-grid__column dashboard__right">
+                <h2 class="dashboard__col-title">package-analysis-apk</h2>
+                <div class="dashboard-module__lg" data-dashboard-module="upload">
+                    <div class="dashboard-module__body omni-uploader">
+                        <div class="dashboard-module__body--left">
+                            <div class="stack">
+                                <div class="uploader-area" id="dashboard-submit">
+                                    <div class="dndupload__simple" id="dndupload_1739008515724">
+                                        <form id="uploader" action="" method="post" enctype="multipart/form-data">
+                                    
+                                            <input type="file" name="files[]" id="file" class="holder_input" data-multiple-caption="{count} files selected" multiple="">
+                                    
+                                            <h5>Submit a file for Analysis</h5>
+                        
+                                              <i class="fa fa-upload"></i>
+                                            
+                                    
+                                            <progress id="uploadprogress" min="0" max="100" value="0">0</progress>
+                                        </form>
+                                    </div>
+                                </div>
+                    
+                            </div>
+                        </div>
+                        <div class="dashboard-module__body--right">
+                            <div id="submit-with-link">
+                                <form>
+                                    <h5>Submit URLs/hashes</h5>
+                                    <textarea rows="6" class="form-control" placeholder="Submit URLs/hashes"></textarea>
+                                    <div class="text-center">
+                                        <button type="submit" class="button--lg">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="dashboard-module__footer">
+                        <p class="align-left"><i class="fa fa-info-circle"></i> Drag your file into the left field or click the icon to select a file.</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-module" data-dashboard-module="system">
+                    <header class="dashboard-module__header">
+                        <h4 class="align-left clearfix">
+                            System info
+                            <div class="pull-right">
+                                <span class="label label-free">free</span>
+                                <span class="label label-used">used</span>
+                                <span class="label label-total">total</span>
+                            </div>
+                        </h4>
+                    </header>
+
+                    <section class="dashboard-module__body free-disk-space">
+                        <div class="dashboard-module__body--flex">
+                            <h5>Free disk space</h5>
+                            <div class="free-disk-space__chart" id="ds-stat">
+                                <canvas></canvas>
+                                <div class="free-disk-space__legend">
+                                    <p><strong data-populate="free-disk-space">11.3 TB</strong></p>
+                                    <p data-populate="total-disk-space">90 T</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-module__body--flex">
+                            <h5>CPU Load</h5>
+                            <div class="free-disk-space__chart" id="cpu-stat">
+                                <canvas></canvas>
+                                <div class="free-disk-space__legend">
+                                    <p><strong data-populate="cpu-load">1%</strong></p>
+                                    <p data-populate="total-cores">56 cores</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-module__body--flex">
+                            <h5>Memory usage</h5>
+                            <div class="free-disk-space__chart" id="memory-stat">
+                                <canvas></canvas>
+                                <div class="free-disk-space__legend">
+                                    <p><strong data-populate="memory-used">709.3 GB</strong></p>
+                                    <p data-populate="memory-total">738.0 GB</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <footer>
+        <p class="text-center"><a href="/analysis/">Show all recent analyses</a></p>
+        <div class="container-fluid center">
+            <a href="#">Back to the top</a>
+        </div>
+    </footer>
+
+</body>
+<html>

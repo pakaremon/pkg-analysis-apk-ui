@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Nicer Table</title>
+        <link href="./styles.css" rel="stylesheet" type="text/css" />
+        <link href="./vendor.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body class="night">
+            <!-- class="night" -->
+    <!-- class="cyborg" -->
+        <nav class="app-nav" id="primary-nav">
+
+            <li class="active"><a title="Dashboard" href="dashboard.html"><i class="fa fa-tachometer"></i> Dashboard</a></li>
+            <li><a href="#" title="Recent"><i class="fa fa-th-list"></i> Recent</a></li>
+            <li><a href="#" title="Pending"><i class="fa fa-cogs"></i> Pending</a></li>
+            <li><a href="#" title="Search"><i class="fa fa-search"></i> Search</a></li>
+            </ul>
+        
+            <ul class="app-nav__nav--right">
+                <li>
+                    <a href="./submit.html" class="button outline">
+                        <span data-responsive="nav-expanded">Submit</span>
+                        <span data-responsive="nav-collapsed"><i class="fa fa-upload"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="button outline">
+                        <span data-responsive="nav-expanded">Import</span>
+                        <span data-responsive="nav-collapsed"><i class="fa fa-download"></i></span>
+                    </a>
+                </li>
+                <li class="app-nav__dropdown--parent">
+                    <a href="#" id="select-theme">
+                        <i class="fa fa-paint-brush"></i>
+                    </a>
+                    <div class="app-nav__dropdown">
+                        <h5>Select theme</h5>
+                        <li><a class="active" href="theme:default">Default</a></li>
+                        <li><a href="theme:cyborg">Cyborg</a></li>
+                        <li><a href="theme:night">Night</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        
+        </nav>
+
+        
+
+
+    <div class="app">
+        <div class="flex-nav">
+            <nav class="flex-nav__nav" id="analysis-nav">
+                <ul class="cuckoo-nav">
+                    <li class="cuckoo-nav__search">
+                        <div>
+                            <i class="fa fa-search"></i>
+                            <span><input type="text" name="sidebar_search" placeholder="Search" /></span>
+                            <button>Search</button>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <a href="#" class="active">
+                            <i class="fa fa-home"></i>
+                            <span>Summary</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#static-analysis.html">
+                            <i class="fa fa-book"></i>
+                            <span>Static Analysis</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#extracted-artifacts.html">
+                            <i class="fa fa-pencil"></i>
+                            <span>Extracted Artifacts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#behavioral-analysis.html">
+                            <i class="fa fa-share-alt-square"></i>
+                            <span>Behavioral Analysis</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#network-analysis.html">
+                            <i class="fa fa-globe"></i>
+                            <span>Network Analysis</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#dropped-files.html">
+                            <i class="fa fa-file-code-o"></i>
+                            <span>Dropped Files</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#dropped-buffers.html">
+                            <i class="fa fa-server"></i>
+                            <span>Dropped Buffers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#misp.html">
+                            <i class="fa fa-flag"></i>
+                            <span>MISP</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#process-memory.html">
+                            <i class="fa fa-qrcode"></i>
+                            <span>Process Memory</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#vm-memory-dump.html">
+                            <i class="fa fa-qrcode"></i>
+                            <span>VM Memory Dump</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#compare-analysis.html">
+                            <i class="fa fa-random"></i>
+                            <span>Compare Analysis</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#export-analysis.html">
+                            <i class="fa fa-download"></i>
+                            <span>Export Analysis</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#reboot-analysis.html">
+                            <i class="fa fa-power-off"></i>
+                            <span>Reboot Analysis</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#options.html">
+                            <i class="fa fa-cogs"></i>
+                            <span>Options</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#feedback_form">
+                            <i class="fa fa-bug"></i>
+                            <span>Feedback</span>
+                        </a>
+                    </li>
+            
+                    <li class="lock-sidebar">
+                        <a href="sidebar:toggle-lock" title="Click to disable collapsing">
+                            <i class="fa"></i>
+                            <span></span>
+                        </a>
+                    </li>
+            
+                </ul>
+            </nav>
+            <section class="flex-nav__body cuckoo-analysis" tabindex="0">
+                            
+                <header class="page-header cuckoo-analysis__header">
+                    <h1>Summary </h1>
+                    <div class="header-right">
+                        <span class="file-name"><i class="fa fa-file-o"></i>
+                            wolfi-apk sample name
+                        </span>
+                    </div>
+                </header>
+
+                            
+                <table class="analysis-report">
+                    <thead>
+                        <tr>
+                            <th>File Name</th>
+                            <th>Detection</th>
+                            <th>Severity</th>
+                            <th>Type</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>example1.apk</td>
+                            <td>Detected</td>
+                            <td>High</td>
+                            <td>Trojan</td>
+                            <td><a href="#details1">View Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>example2.apk</td>
+                            <td>Not Detected</td>
+                            <td>Low</td>
+                            <td>Adware</td>
+                            <td><a href="#details2">View Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>example3.apk</td>
+                            <td>Detected</td>
+                            <td>Medium</td>
+                            <td>Spyware</td>
+                            <td><a href="#details3">View Details</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </section>
+        </div>
+
+    </div>
+
+
+
+
+    <footer>
+        <p class="text-center"><a href="/analysis/">Show all recent analyses</a></p>
+        <div class="container-fluid center">
+            <a href="#">Back to the top</a>
+        </div>
+    </footer>
+
+</body>
+<html>
