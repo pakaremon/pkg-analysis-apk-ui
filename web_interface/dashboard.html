@@ -159,8 +159,21 @@
                         <div class="dashboard-module__body--right">
                             <div id="submit-with-link">
                                 <form>
-                                    <h5>Submit URLs/hashes</h5>
-                                    <textarea rows="6" class="form-control" placeholder="Submit URLs/hashes"></textarea>
+                                    <h5>Submit package name</h5>
+                                    <textarea rows="1" class="form-control" placeholder="Submit package name"></textarea>
+                                    <form>
+                                        <h5>Select package ecosystem</h5>
+                                        <select class="form-control">
+                                            <option value="npm">npm</option>
+                                            <option value="pypi">PyPI</option>
+                                            <option value="rubygems">RubyGems</option>
+                                            <option value="wolfis">Wolfis</option>
+                                            <option value="crates.io">Crates.io</option>
+                                            <option value="maven_central">Maven Central</option>
+                                            <option value="packagist">Packagist</option>
+    
+                                        </select>
+                                    </form>
                                     <div class="text-center">
                                         <button type="submit" class="button--lg">Submit</button>
                                     </div>
