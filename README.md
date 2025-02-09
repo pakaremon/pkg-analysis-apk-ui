@@ -1,8 +1,12 @@
 Dashboard
-![image](https://github.com/user-attachments/assets/0a6242b8-fe0f-42ed-b713-883f49f9ebec)
+![image](https://github.com/user-attachments/assets/3fad1004-1afd-449d-8586-8efbca5f8e82)
+
 
 Submit File or Hash Interface
-![image](https://github.com/user-attachments/assets/b12c93fb-fddb-4fa4-af2c-588716bd428d)
+![image](https://github.com/user-attachments/assets/042396b4-f59b-4316-8139-cb79c216e301)
+
+![image](https://github.com/user-attachments/assets/33d153bb-df5c-4c0b-b250-e17a709d8343)
+
 
 Configure Before Dynamic Analysis
 ![image](https://github.com/user-attachments/assets/15279e8e-16d1-4414-ba2d-986b0571dccb)
