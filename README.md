@@ -2,7 +2,7 @@ Dashboard
 ![image](https://github.com/user-attachments/assets/3fad1004-1afd-449d-8586-8efbca5f8e82)
 
 
-Submit File or Hash Interface
+Submit package name and package ecosystem
 ![image](https://github.com/user-attachments/assets/042396b4-f59b-4316-8139-cb79c216e301)
 
 ![image](https://github.com/user-attachments/assets/33d153bb-df5c-4c0b-b250-e17a709d8343)
