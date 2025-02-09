@@ -1,5 +1,6 @@
+Dashboard:
 ![image](https://github.com/user-attachments/assets/0a6242b8-fe0f-42ed-b713-883f49f9ebec)
-
+Submit file or hash interface
 ![image](https://github.com/user-attachments/assets/b12c93fb-fddb-4fa4-af2c-588716bd428d)
 
 ![image](https://github.com/user-attachments/assets/15279e8e-16d1-4414-ba2d-986b0571dccb)
