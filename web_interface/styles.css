@@ -23049,11 +23049,14 @@ body.night .process-spec .loading
 
 .breadcrumbs > li:not(:last-child):after
 {
-    margin: 0 15px;
+    /* margin: 0 15px;
 
     content: '\f101';
 
-    color: #337ab7;
+    color: #337ab7; */
+    content: "\f101"; /* Font Awesome icon code for angle-right */
+    font-family: FontAwesome;
+    padding: 0 8px;
 }
 
 @keyframes c1

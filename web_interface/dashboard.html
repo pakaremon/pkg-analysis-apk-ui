@@ -4,17 +4,45 @@
         <title>Nicer Table</title>
         <link href="./styles.css" rel="stylesheet" type="text/css" />
         <link href="./vendor.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const fileInput = document.getElementById('file');
+                    const uploaderArea = document.getElementById('dashboard-submit');
+                    const uploadProgress = document.getElementById('uploadprogress');
+                    const uploadIcon = document.querySelector('#dashboard-submit .fa-upload');
+                    const uploadTitle = document.querySelector('#dashboard-submit h5');
+
+                    fileInput.addEventListener('change', function() {
+                        if (fileInput.files.length > 0) {
+                            // Change CSS after file upload
+                            uploaderArea.style.backgroundColor = '#e0f7fa'; //  change background color
+                            uploaderArea.style.border = '2px solid #00796b'; //  change border
+                            uploadProgress.style.backgroundColor = '#4caf50'; // change progress bar color
+                            uploadProgress.style.height = '20px'; // change progress bar height
+                            uploadProgress.value = 100; //  set progress bar to 100%
+
+                            // Change icon and title
+                            uploadIcon.classList.remove('fa-upload');
+                            uploadIcon.classList.add('fa-check');
+                            uploadTitle.textContent = 'File Uploaded Successfully';
+                        }
+                    });
+                    
+                });
+
+                
+            </script>
     </head>
     <body class="night">
             <!-- class="night" -->
     <!-- class="cyborg" -->
         <nav class="app-nav" id="primary-nav">
-
-            <li class="active"><a title="Dashboard" href="dashboard.html"><i class="fa fa-tachometer"></i> Dashboard</a></li>
-            <li><a href="#" title="Recent"><i class="fa fa-th-list"></i> Recent</a></li>
-            <li><a href="#" title="Pending"><i class="fa fa-cogs"></i> Pending</a></li>
+            <li class="active"><a title="Dashboard" href="dashboard.html"><i class="	fa fa-credit-card"></i> Dashboard</a></li>
+            <li><a href="#" title="Recent"><i class="fa fa-align-justify"></i> Recent</a></li>
+            <li><a href="#" title="Pending"><i class="fa fa-dot-circle-o"></i> Pending</a></li>
             <li><a href="#" title="Search"><i class="fa fa-search"></i> Search</a></li>
-            </ul>
+           
         
             <ul class="app-nav__nav--right">
                 <li>
@@ -161,7 +189,7 @@
                         <div class="dashboard-module__body--flex">
                             <h5>Free disk space</h5>
                             <div class="free-disk-space__chart" id="ds-stat">
-                                <canvas></canvas>
+                                <canvas style="display: block; height: 135px; width: 135px;" width="168" height="168">aaa</canvas>
                                 <div class="free-disk-space__legend">
                                     <p><strong data-populate="free-disk-space">11.3 TB</strong></p>
                                     <p data-populate="total-disk-space">90 T</p>
@@ -172,7 +200,7 @@
                         <div class="dashboard-module__body--flex">
                             <h5>CPU Load</h5>
                             <div class="free-disk-space__chart" id="cpu-stat">
-                                <canvas></canvas>
+                                <canvas style="display: block; height: 135px; width: 135px;" width="168" height="168"></canvas>
                                 <div class="free-disk-space__legend">
                                     <p><strong data-populate="cpu-load">1%</strong></p>
                                     <p data-populate="total-cores">56 cores</p>
@@ -183,7 +211,7 @@
                         <div class="dashboard-module__body--flex">
                             <h5>Memory usage</h5>
                             <div class="free-disk-space__chart" id="memory-stat">
-                                <canvas></canvas>
+                                <canvas style="display: block; height: 135px; width: 135px;" width="168" height="168"></canvas>
                                 <div class="free-disk-space__legend">
                                     <p><strong data-populate="memory-used">709.3 GB</strong></p>
                                     <p data-populate="memory-total">738.0 GB</p>

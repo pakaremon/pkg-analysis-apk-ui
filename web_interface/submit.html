@@ -4,17 +4,80 @@
         <title>Nicer Table</title>
         <link href="./styles.css" rel="stylesheet" type="text/css" />
         <link href="./vendor.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const fileInput = document.getElementById('file');
+            const uploaderArea = document.getElementById('dndupload');
+            const uploadProgress = document.getElementById('uploadprogress');
+            const uploadLabel = document.getElementById('info');
+            const textIdle = uploadLabel.querySelector('.text-idle');
+            const textDropped = uploadLabel.querySelector('.text-dropped');
+            const textDone = uploadLabel.querySelector('.text-done');
+            const textError = uploadLabel.querySelector('.text-error');
+
+            fileInput.addEventListener('change', function() {
+                if (fileInput.files.length > 0) {
+                    // Change CSS after file upload
+                    uploaderArea.style.backgroundColor = '#e0f7fa'; 
+                    uploaderArea.style.border = '2px solid #00796b'; 
+                    uploadProgress.style.backgroundColor = '#4caf50';
+                    uploadProgress.style.height = '20px'; 
+                    uploadProgress.value = 100; 
+
+                    // Change text and visibility
+                    textIdle.style.display = 'none';
+                    textDropped.style.display = 'none';
+                    textDone.style.display = 'block';
+                    textError.style.display = 'none';
+                }
+            });
+
+            // Simulate file upload success
+            document.getElementById('uploader').addEventListener('submit', function(event) {
+                event.preventDefault();
+                setTimeout(function() {
+                    uploadProgress.value = 100;
+                    textIdle.style.display = 'none';
+                    textDropped.style.display = 'none';
+                    textDone.style.display = 'block';
+                    textError.style.display = 'none';
+                }, 1000); // Simulate upload delay
+            });
+
+            //for switching tabs in upload and hash
+            const tabNav = document.getElementById('tab-nav');
+            const tabs = tabNav.querySelectorAll('a');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    const tabContent = document.querySelectorAll('.tab-pane');
+                    tabContent.forEach(content => content.classList.remove('active'));
+                    const target = document.querySelector(tab.getAttribute('href'));
+                    target.classList.add('active');
+                });
+            });
+        });
+
+
+</script>
+
+
+        </script>
     </head>
     <body class="night">
             <!-- class="night" -->
     <!-- class="cyborg" -->
         <nav class="app-nav" id="primary-nav">
 
-            <li class="active"><a title="Dashboard" href="dashboard.html"><i class="fa fa-tachometer"></i> Dashboard</a></li>
-            <li><a href="#" title="Recent"><i class="fa fa-th-list"></i> Recent</a></li>
-            <li><a href="#" title="Pending"><i class="fa fa-cogs"></i> Pending</a></li>
+            <li class="active"><a title="Dashboard" href="dashboard.html"><i class="	fa fa-credit-card"></i> Dashboard</a></li>
+            <li><a href="#" title="Recent"><i class="fa fa-align-justify"></i> Recent</a></li>
+            <li><a href="#" title="Pending"><i class="fa fa-dot-circle-o"></i> Pending</a></li>
             <li><a href="#" title="Search"><i class="fa fa-search"></i> Search</a></li>
-            </ul>
         
             <ul class="app-nav__nav--right">
                 <li>
@@ -64,7 +127,7 @@
                 <div class="flex-grid__align-horizontal upload-module">
                     <div class="upload-module__container">
                         <h3>Submit a file via:</h3>
-                        <nav class="grouped-buttons" role="tablist">
+                        <nav id="tab-nav" class="grouped-buttons" role="tablist">
                             <a class="active" data-toggle="tab" href="#tab-upload">File upload</a>
                             <a data-toggle="tab" href="#tab-hash">URL or file hash</a>
                         </nav>
@@ -72,7 +135,7 @@
                             <div class="tab-pane upload-module__body active" role="tabpanel" id="tab-upload">
                                 <div class="upload-module__body--left">
                                     <div id="dndsubmit">
-                                        <div class="dndupload__v2" id="dndupload_1739023017325">
+                                        <div class="dndupload__v2" id="dndupload">
 
                                             <form id="uploader" action="/submit/api/presubmit" method="POST" enctype="multipart/form-data">
                                                 <div id="container">
